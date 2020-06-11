@@ -1,7 +1,7 @@
 /**
 
 *	\file multi.c
-*	\author ghassen 
+*	\author ghassen
 *	\version 1.0
 
 */
@@ -11,9 +11,9 @@
 
 
 /**
-*	\brief	partage_ecran initialisation de partage d'ecran 
-*	\param	screen pointeur 
-*	\param	e  pointeur struct ecran 
+*	\brief	partage_ecran initialisation de partage d'ecran
+*	\param	screen pointeur
+*	\param	e  pointeur struct ecran
 */
 void partage_ecran(SDL_Surface *screen ,ecran *e )
 {
@@ -31,13 +31,13 @@ e->botclio.y=200; //200
 e->botclio.w=7500;
 e->botclio.h=300;
 e->botclippos.x = 0 ;
-e->botclippos.y = 300  ;
+e->botclippos.y = 300;
 }
 
 /**
-*	\brief	Affichage de topclip et botclip 
-*	\param	screen pointeur 
-*	\param	e  pointeur struct ecran 
+*	\brief	Affichage de topclip et botclip
+*	\param	screen pointeur
+*	\param	e  pointeur struct ecran
 */
 void affichage (SDL_Surface *screen ,ecran *e )
 {
@@ -48,9 +48,9 @@ SDL_BlitSurface(e->bg,&e->topclip,screen,&e->topclippos);
 }
 
 /**
-*	\brief	initilisation des perso 
-*	\param	screen pointeur 
-*	\param	e  pointeur struct ecran 
+*	\brief	initilisation des perso
+*	\param	screen pointeur
+*	\param	e  pointeur struct ecran
 *	\param	p  pointeur struct Perso
 */
 void initialiserperso(SDL_Surface *screen , Perso *p,ecran *e)
@@ -64,9 +64,9 @@ void initialiserperso(SDL_Surface *screen , Perso *p,ecran *e)
     }
 
 /**
-*	\brief	affichage des personnages 1 et 2 
-*	\param	screen pointeur 
-*	\param	e  pointeur struct ecran 
+*	\brief	affichage des personnages 1 et 2
+*	\param	screen pointeur
+*	\param	e  pointeur struct ecran
 *	\param	p  pointeur struct Perso
 */
 void affichageperso(SDL_Surface *screen , Perso *p,ecran *e)
@@ -76,9 +76,9 @@ SDL_BlitSurface(p->pe2,NULL,screen,&p->pos2);
 }
 
 /**
-*	\brief	deplacement des personnages 1 et 2 
-*	\param	screen pointeur 
-*	\param	e  pointeur struct ecran 
+*	\brief	deplacement des personnages 1 et 2
+*	\param	screen pointeur
+*	\param	e  pointeur struct ecran
 *	\param	p  pointeur struct Perso
 */
 void deplacement(SDL_Surface *screen , Perso *p , ecran *e , SDL_Event *event )
@@ -102,9 +102,9 @@ void deplacement(SDL_Surface *screen , Perso *p , ecran *e , SDL_Event *event )
 		}
 
 /**
-*	\brief	scrolling 
-*	\param	screen pointeur 
-*	\param	e  pointeur struct ecran 
+*	\brief	scrolling
+*	\param	screen pointeur
+*	\param	e  pointeur struct ecran
 *	\param	p  pointeur struct Perso
 */
 void scrolling(SDL_Surface *screen , Perso *p , ecran *e)
