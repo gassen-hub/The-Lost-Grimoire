@@ -1,3 +1,14 @@
+/**
+
+*	\file dep.c
+*	\breif pour tester le programme 
+*	\verison  1
+*	\author   ghassen beddouihech
+
+
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <SDL/SDL.h>

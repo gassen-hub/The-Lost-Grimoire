@@ -1,3 +1,12 @@
+/**
+
+*	\file collision.c
+*	\author ghassen 
+
+
+*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -16,7 +25,13 @@
 #define posYobj2 80
 
 
+/**
+*	\brief	 initialisation objet 1 & 2 
+*	\param	objet1  pointeur objet1
+*	\param	objet2 pointeur objet2
 
+
+*/
 void init (Objet *objet1,Objet *objet2)
 {
  objet1->img=IMG_Load("detective.png");
@@ -27,7 +42,14 @@ void init (Objet *objet1,Objet *objet2)
  objet2->pos.x=posXobj2 ;
  objet2->pos.y=posYobj2 ;
 }
+/**
+*	\brief	 affichage objet 1 & 2 
+*	\param	screen 
+*	\param	objet1  pointeur objet1
+*	\param	objet2 pointeur objet2
 
+
+*/
 void setup (SDL_Surface *screen,Objet *objet1,Objet *objet2)
 {
  SDL_WM_SetCaption("collision trigo", NULL);
@@ -37,29 +59,31 @@ void setup (SDL_Surface *screen,Objet *objet1,Objet *objet2)
  SDL_Flip(screen) ;
 
 }
+/**
+*	\brief	 calcule rayon 
+*	\param	objet1  pointeur objet1
+*	\param	objet2 pointeur objet2
 
+
+*/
 void calculer_centre_rayon (Objet *objet1,Objet *objet2)
 {
  objet1->c.x=objet1->pos.x+ (objet1->img->w)/2 ;
  objet1->c.y=objet1->pos.y+ (objet1->img->h)/2 ;
  objet1->c.rayon=sqrt( pow( (objet1->img->w)/2 , 2) + pow( (objet1->img->h)/2 , 2) ) ;
-/*  pour le circle inscrit :
- if(width<height)
- {
- objet1->c.rayon= (objet1->img->w)/2 ;
- objet2->c.rayon= (objet2->img->w)/2 ;
- }
- else 
- {
- objet1->c.rayon= (objet1->img->h)/2 ;
- objet2->c.rayon= (objet2->img->h)/2 ;
- } */
+
  objet2->c.x=objet2->pos.x+ (objet2->img->w)/2 ;
  objet2->c.y=objet2->pos.y+ (objet2->img->h)/2 ;
  objet2->c.rayon=sqrt( pow( (objet2->img->w)/2 , 2) + pow( (objet2->img->h)/2 , 2) ) ;
 
 }
+/**
+*	\brief	 calcule distance 
+*	\param	objet1  pointeur objet1
+*	\param	objet2 pointeur objet2
 
+
+*/
 float calculer_distance (Objet *objet1,Objet *objet2) 
 {
   float D ;
@@ -68,7 +92,14 @@ float calculer_distance (Objet *objet1,Objet *objet2)
 
   return D ;
 }
+/**
+*	\brief	 verification collision 
+*	\param	objet1  pointeur objet1
+*	\param	objet2 pointeur objet2
+*	\param	D1 distance objet1
 
+
+*/
 int verif_collision ( Objet *objet1,Objet *objet2,float D1 )
 {
   float D2 ;
@@ -81,7 +112,15 @@ int verif_collision ( Objet *objet1,Objet *objet2,float D1 )
   
   return collision ;
 }
+/**
+*	\brief	 deplacement   
+*	\param	objet  pointeur 
+*	\param	running entier 
 
+
+
+
+*/
 void deplacement_objet(Objet *objet,int *running)
 {
   SDL_Event event ;
@@ -112,7 +151,16 @@ void deplacement_objet(Objet *objet,int *running)
                }
       }
 }
+/**
+*	\brief	 mise  a jour affichage 
+*	\param	objet1  pointeur objet1
+*	\param	objet2 pointeur objet2
+*	\param	screen  pointeur 
 
+
+
+
+*/
 void update (SDL_Surface *screen,Objet *objet1,Objet *objet2)
 {
   SDL_FillRect(screen,NULL,SDL_MapRGB(screen->format,255,255,255)) ;
@@ -121,7 +169,14 @@ void update (SDL_Surface *screen,Objet *objet1,Objet *objet2)
   SDL_Flip(screen) ;
   
 }
+/**
+*	\brief	 liberer memoire 
+*
 
+
+
+
+*/
 void liberate_memory (Objet *objet1,Objet *objet2)
 {
   SDL_FreeSurface (objet1->img) ;

@@ -1,3 +1,15 @@
+
+/**
+
+*	\file main.c
+*	\breif pour tester le programme 
+*	\verison  1
+*	\author   ghassen beddouihech
+
+
+
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <SDL/SDL.h>

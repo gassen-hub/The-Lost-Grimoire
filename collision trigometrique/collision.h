@@ -1,6 +1,25 @@
+/**
+
+*	\file collision.h
+*	\author ghassen beddouihech 
+
+
+
+*/
+
+
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
 
+/**
+
+*	\struct  cercle 
+*	\breif   structure  cercle 
+
+
+
+
+*/
 typedef struct 
 {
   int x ;
@@ -9,11 +28,22 @@ typedef struct
 
 }Circle;
 
+
+
+/**
+
+*	\struct  Objet
+*	\breif   structure  Objet
+
+
+
+
+*/
 typedef struct 
 {
   SDL_Surface *img ;
-  SDL_Rect pos;
-  Circle c ;
+  SDL_Rect pos; /*! position objet !*/
+  Circle c ; /*! struct  cercle  !*/
   
 }Objet;
 

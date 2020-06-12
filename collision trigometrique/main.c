@@ -1,3 +1,14 @@
+
+/**
+
+*	\file main.c
+*	\author ghassen 
+*	\version 1
+
+
+*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>

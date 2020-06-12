@@ -1,15 +1,24 @@
-#ifndef HEADER_H_INCLUDED
-#define HEADER_H_INCLUDED
+
+/**
+
+*	\file header.h
+*	\author ghassen beddouihech 
 
 
 
+*/
 
 
+
+/**
+*@ struct image 
+*@ breif struct pour image enigme    
+*/
 
 typedef struct image
 {
 	SDL_Surface *img;
-	SDL_Rect posimg;
+	SDL_Rect posimg; /*!position enigme! */
 }image;
 
 
@@ -20,4 +29,4 @@ int random_nbr(int nb) ;
 
 
 
-#endif // HEADER_H_INCLUDED
+
