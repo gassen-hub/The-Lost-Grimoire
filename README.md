@@ -1,0 +1,1 @@
+A 2D adventure game built in C, where players explore diverse levels, solve puzzles, and face challenging enemies. Featuring classic graphics, interactive elements, and immersive gameplay. Designed for smooth performance, with intuitive controls and engaging story progression.
